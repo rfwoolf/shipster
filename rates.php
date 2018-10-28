@@ -34,7 +34,7 @@ $reg_max_date = date('Y-m-d H:i:s O', strtotime('+7 days'));
 // build the array of line items using the prior values
 $output = array('rates' => array(
     array(
-        'service_name' => 'Shipster',
+        'service_name' => 'Shipping & Handling',
         'service_code' => 'Shipster',
         'total_price' => $overnight_cost,
         'currency' => 'AUD'//,
