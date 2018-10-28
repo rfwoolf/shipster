@@ -37,9 +37,9 @@ $output = array('rates' => array(
         'service_name' => 'Shipster',
         'service_code' => 'Shipster',
         'total_price' => $overnight_cost,
-        'currency' => 'AUD',
-        'min_delivery_date' => $on_min_date,
-        'max_delivery_date' => $on_max_date
+        'currency' => 'AUD'//,
+        //'min_delivery_date' => $on_min_date,
+        //'max_delivery_date' => $on_max_date
     )
 ));
 
