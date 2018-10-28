@@ -2,13 +2,13 @@
 // log the raw request -- this makes debugging much easier
 //$filename = time();
 $input = file_get_contents('php://input');
-file_put_contents("php://stderr".'-input', $input);
+file_put_contents("php://stderr", $input);
 
 // parse the request
 $rates = json_decode($input, true);
 
 // log the array format for easier interpreting
-file_put_contents("php://stderr".'-debug', print_r($rates, true));
+file_put_contents("php://stderr", print_r($rates, true));
 
 // total up the cart quantities for simple rate calculations
 $quantity = 0;
@@ -47,7 +47,7 @@ $output = array('rates' => array(
 $json_output = json_encode($output);
 
 // log it so we can debug the response
-file_put_contents("php://stderr".'-output', $json_output);
+file_put_contents("php://stderr", $json_output);
 
 // send it back to shopify
 print $json_output;
