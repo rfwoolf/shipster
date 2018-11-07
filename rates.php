@@ -329,9 +329,18 @@ $verify_endpoint_URL = 'https://digitalapi-stest.npe.auspost.com.au/delivery-clu
 
 //Verify that the customer is a Shipster member
 //If verified = FALSE, return no shipping options, and exit
+if $verified == FALSE {
+ $output = array('rates' => array(
+    array(
+        'service_name' => 'Shipping',
+        'service_code' => 'Shipping',
+        'total_price' => number_format(9.99, 2, '', ''),
+        'currency' => 'AUD'//, 	
+    )
+));
+} else {    
 //If verified = TRUE, return $0.00 shipping:
 // use number_format because shopify api expects the price to be "25.00" instead of just "25"
-
 // build the array of line items using the prior values
 $output = array('rates' => array(
     array(
@@ -341,6 +350,7 @@ $output = array('rates' => array(
         'currency' => 'AUD'//,
     )
 ));
+}
 
 // encode into a json response
 $json_output = json_encode($output);
