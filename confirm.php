@@ -5,6 +5,13 @@
 $input = file_get_contents('php://input');
 file_put_contents("php://stderr", $input);
 
+##############################################################################
+##Parse the Confirmation Request
+##############################################################################
+$request = json_decode($input, true);
+// log the array format for easier interpreting
+file_put_contents("php://stderr", print_r($request, true));
+
 ##Example Order Webhook:
 /*
 {
@@ -416,3 +423,5 @@ $API_key = "5b9fd68d0bcc404387327c0e6e110194";
 
 ##Example curl request:
 ## curl -i -H "Accept: application/json" -H "Content-Type: application/json" -H "AUTH-KEY: 5b9fd68d0bcc404387327c0e6e110194" -X GET https://digitalapi-stest.npe.auspost.com.au/delivery-club/v2/verify/0abab3f1b4d142c395f88c2054f535ae0ccf36e5
+
+print 'Hello world';
