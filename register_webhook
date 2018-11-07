@@ -13,7 +13,7 @@ JSON to register a webhook:
 }
 
 ##Example curl:
-## https://eb2cda841f518d6d4a90eb41151a1187:38f9f2678fce8381e9612b538da01cc6@biltongtogo.myshopify.com/admin/webhooks.json?
+## https://eb2cda841f518d6d4a90eb41151a1187:38f9f2678fce8381e9612b538da01cc6@biltongtogo.myshopify.com/admin/webhooks.json?{"webhook":{"topic":"orders/create","address":"https://shipstertest.herokuapp.com/confirm.php","format":"json"}}
 
 
 
