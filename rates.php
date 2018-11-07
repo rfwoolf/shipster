@@ -298,21 +298,27 @@ $customer_email_hashed = //Assign customer email address.
 ##All requests use JSON data (if applicable) and responses
 ##It is recommended to set a Content-Type: application/json header for every request you send to the API.
 ##Each request must contain an AUTH-KEY header with the key as a value.
+	
+##Use this API key for STEST:
+$API_key = "5b9fd68d0bcc404387327c0e6e110194";
+
+##Use this Sandbox  endpoint_URL for the verify method:
+$verify_endpoint_URL = 'https://digitalapi-stest.npe.auspost.com.au/delivery-club/v2/verify/';
+
+##Sandbox Test email addresses:
+## appwsample1@mailinator.com (SHA-1 Hash: 0abab3f1b4d142c395f88c2054f535ae0ccf36e5)
+## appwsample2@mailinator.com (SHA-1 Hash: face8a6532d302eedc2355f9038d63db92d3dd75)
+## appwsample3@mailinator.com (SHA-1 Hash: 9e734370915725dd25afbd429dc51b1e3dc45d13)
+//For testing purposes, you can use http://www.sha1-online.com/ to generate a SHA1 hash from a plain email.
+
 ##Example Request Header    
-/*
- GET /api/v2/verify/245f310ea00c0fbedd12b2dc33a289ec9969531d HTTP/1.1
- Content-Type: application/json
- AUTH-KEY: 648ff83b99ff17a4ac74afc387e276b6
-*/    
-##The Sandbox endpoint_URL for the verify method is:
-##https://digitalapi-stest.npe.auspost.com.au/delivery-club/v2/verify/
-##
-##Example request:
-##The SHA1 hashed email address is: 38f31e4e7a16c477df603742be5c29e57c43bb98
-/*
-  curl --request GET \
-  --url https://digitalapi-stest.npe.auspost.com.au/delivery-club/v2/verify/38f31e4e7a16c477df603742be5c29e57c43bb98
-*/
+## GET /api/v2/verify/245f310ea00c0fbedd12b2dc33a289ec9969531d HTTP/1.1
+## Content-Type: application/json
+## AUTH-KEY: 5b9fd68d0bcc404387327c0e6e110194
+
+##Example curl request:
+## curl -i -H "Accept: application/json" -H "Content-Type: application/json" -H "AUTH-KEY: 5b9fd68d0bcc404387327c0e6e110194" -X GET https://digitalapi-stest.npe.auspost.com.au/delivery-club/v2/verify/0abab3f1b4d142c395f88c2054f535ae0ccf36e5
+
 ##Example response:
 /*
 {
@@ -320,7 +326,6 @@ $customer_email_hashed = //Assign customer email address.
 }
 */
 ##############################################################################
-$verify_endpoint_URL = 'https://digitalapi-stest.npe.auspost.com.au/delivery-club/v2/verify/';
 
 //Verify that the customer is a Shipster member
 //If verified = FALSE, return no shipping options, and exit
