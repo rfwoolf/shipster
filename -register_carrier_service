@@ -1,0 +1,68 @@
+##Endpoint URL:
+## https://biltongtogo.myshopify.com/admin/carrier_services.json
+##with credentials:
+## https://eb2cda841f518d6d4a90eb41151a1187:38f9f2678fce8381e9612b538da01cc6@biltongtogo.myshopify.com/admin/webhooks.json
+
+##JSON to register a carrier_service
+/*
+
+POST /admin/carrier_services.json
+{
+  "carrier_service": {
+    "name": "Shipster",
+    "callback_url": "https://shipstertest.herokuapp.com/rates.php",
+    "service_discovery": true
+  }
+}
+*/
+
+##Example curl request: (quotes have to be escaped)
+## curl -H "Content-Type: application/json" --request POST --data "{\"carrier_service\":{\"name\":\"Shipster\",\"callback_url\":\"https://shipstertest.herokuapp.com/rates.php\",\"service_discovery\":true}}" https://eb2cda841f518d6d4a90eb41151a1187:38f9f2678fce8381e9612b538da01cc6@biltongtogo.myshopify.com/admin/carrier_services.json
+
+##To Get a list of existing carrier_services:
+GET /admin/carrier_services.json
+
+##Example curl request:
+## curl -H "Content-Type: application/json" --request GET https://eb2cda841f518d6d4a90eb41151a1187:38f9f2678fce8381e9612b538da01cc6@biltongtogo.myshopify.com/admin/carrier_services.json
+
+##Example respoone:
+/*
+{
+	"carrier_services": [{
+		"id": 7063240762,
+		"name": "Australia Post Parcel Service",
+		"active": true,
+		"service_discovery": true,
+		"carrier_service_type": "api",
+		"format": "json"
+	},
+	{
+		"id": 11908972602,
+		"name": "Shipster",
+		"active": true,
+		"service_discovery": true,
+		"carrier_service_type": "api",
+		"format": "json",
+		"callback_url": "https:\/\/shipstertest.herokuapp.com\/rates.php"
+	}]
+}
+*/
+
+##DELETE a Scarrier Service
+## DELETE /admin/carrier_services/#{carrier_service_id}.json
+
+##Example curl request:
+## curl -H "Content-Type: application/json" --request DELETE https://eb2cda841f518d6d4a90eb41151a1187:38f9f2678fce8381e9612b538da01cc6@biltongtogo.myshopify.com/admin/carrier_services/11908972602.json
+
+
+Update a carrier service
+PUT /admin/carrier_services/#{carrier_service_id}.json
+{
+  "carrier_service": {
+    "id": 1006327364,
+    "name": "Some new name",
+    "active": false
+  }
+}
+
+https://eb2cda841f518d6d4a90eb41151a1187:38f9f2678fce8381e9612b538da01cc6@biltongtogo.myshopify.com/admin/checkouts.json?updated_at_min=2018-10-29T16:15:47-04:00
