@@ -1,4 +1,5 @@
 <?php
+
 ##############################################################################
 ##Log the raw Order Webhook -- this makes debugging much easier
 ##############################################################################
@@ -391,6 +392,8 @@ $API_key = "5b9fd68d0bcc404387327c0e6e110194";
 ## The /confirm endpoint requires a JSON (application/json) formatted body
 
 ##Example JSON:
+
+/*
 {
 	"email": "0abab3f1b4d142c395f88c2054f535ae0ccf36e5",  
 	"orderReference": "ABC1234",
@@ -408,13 +411,16 @@ $API_key = "5b9fd68d0bcc404387327c0e6e110194";
 		"country": "AU"
 	}
 }
+*/
 
 ##Successful response always return a HTTP status code of 200 as a response message
 ##Example Response:
+/*
 {
     "submitted": true,
     "transactionId": "44edc4d4defb25eb8e064fc936163cf880e9c945"
 }
+*/
 
 ##Example Request Header    
 ## GET /api/v2/confirm/ HTTP/1.1
