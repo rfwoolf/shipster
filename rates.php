@@ -299,7 +299,7 @@ $customer_email_hashed = //Assign customer email address.
 ##It is recommended to set a Content-Type: application/json header for every request you send to the API.
 ##Each request must contain an AUTH-KEY header with the key as a value.
 	
-##Use this API key for STEST:
+##Use this API key for Sandbox Test:
 $API_key = "5b9fd68d0bcc404387327c0e6e110194";
 
 ##Use this Sandbox  endpoint_URL for the verify method:
