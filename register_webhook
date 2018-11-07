@@ -1,0 +1,33 @@
+##Endpoint URL:
+## https://biltongtogo.myshopify.com/admin/webhooks.json
+##with credentials:
+## https://eb2cda841f518d6d4a90eb41151a1187:38f9f2678fce8381e9612b538da01cc6@biltongtogo.myshopify.com/admin/webhooks.json
+
+JSON to register a webhook:
+{
+  "webhook": {
+    "topic": "orders/create",
+    "address": "https://shipstertest.herokuapp.com/confirm.php",
+    "format": "json"
+  }
+}
+
+##Example curl:
+## https://eb2cda841f518d6d4a90eb41151a1187:38f9f2678fce8381e9612b538da01cc6@biltongtogo.myshopify.com/admin/webhooks.json?
+
+
+
+Example response:
+HTTP/1.1 201 Created
+{
+  "webhook": {
+    "id": 1047897876,
+    "address": "https://whatever.hostname.com/",
+    "topic": "orders/create",
+    "created_at": "2018-10-26T13:55:52-04:00",
+    "updated_at": "2018-10-26T13:55:52-04:00",
+    "format": "json",
+    "fields": [],
+    "metafield_namespaces": []
+  }
+}
